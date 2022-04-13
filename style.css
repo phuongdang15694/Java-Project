@@ -1,0 +1,12 @@
+p2 {
+  font-size: xx-large;
+}
+p3 {
+  font-size: xx-large;
+}
+.box {
+  width: 800px;
+  margin: 10px auto;
+  text-align: center;
+  display: block;
+}
