@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    p2{font-size: xx-large;}
+    p3{font-size: xx-large;}
+  .box{width: 800px;
+    margin: 10px auto;
+  text-align: center;
+  display: block;
+  }
+
+
+  </style>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link href="src/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <h1>
+      <form id="searching">
+        <input type="text" placeholder="Enter your city here" id="city-input"/>
+        <input type="submit" value="search"  />
+      </form>
+    </h1>
+    <button id="currentbutton">Current Location</button>
+    <h2 id="currentcity">
+      Ho Chi Minh City
+    </h2>
+    <p1>
+      Sunday 20:00 
+    </p1>
+  </br>
+    <p2>
+        Clouds 🌥 33
+        </p2>
+      <p3>
+        ℃
+          </p3>
+  </br>
+</br>
+<div class="box secondBox">
+  <div class="row">
+      <button class="col-1">Mon</button>
+      <button class="col-1">Tue</button>
+      <button class="col-1">Wed</button>
+      <button class="col-1">Thu</buttonv>
+      <button class="col-1">Fri</button>
+      <button class="col-1">Sat</button>
+      <button class="col-1">Sun</button>
+  </div>
+  <div class="row">
+      <div class="col-1">35℃</div>
+      <div class="col-1">33℃</div>
+      <div class="col-1">32℃</div>
+      <div class="col-1">33℃</div>
+      <div class="col-1">31℃</div>
+      <div class="col-1">30℃</div>
+      <div class="col-1">31℃</div>
+  </div>
+  </div>
+      <script>
+     let now=new Date();
+     let p1=document.querySelector("p1");
+     let date=now.getDate();
+     let hours=now.getHours();
+     let minute=now.getMinutes();
+    let days=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+     let months=["January","February","March","April","May","June","July","August","September","October","November","December"]
+     let day=days[now.getDay()];
+     let month=months[now.getMonth()];
+     p1.innerHTML=day+", "+date+" "+month+", "+ hours+":"+minute;
+
+//week5
+
+function searchCity(city) {
+  let apiKey = "017b675a2211b158bb6a64666e9c48b3";
+  let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
+  let apiUrl =`${apiEndpoint}?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showTemperature);
+}
+function showTemperature(response){
+  document.querySelector("#currentcity").innerHTML = response.data.name;
+  let temperatureElement=document.querySelector("p2");
+  temperatureElement.innerHTML=Math.round(response.data.main.temp);
+}
+function submitcity(event){
+  event.preventDefault();
+  let city = document.querySelector("#city-input").value;
+  searchCity(city);     
+} 
+   let form=document.querySelector("#searching")
+    form.addEventListener("click",submitcity)
+
+function getLocation(position) {
+  let apiKey = "017b675a2211b158bb6a64666e9c48b3";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showTemperature);
+}
+function CurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(getLocation);
+}
+let currentLocationButton = document.querySelector("#currentbutton");
+currentLocationButton.addEventListener("click", CurrentLocation)
+</script>
+
+  </body>
+</html>
