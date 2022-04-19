@@ -32,7 +32,10 @@
   </br>
     <div class="row">
       <div class = "col-6">
-        Clouds 🌥 33 ℃|℉
+        <h3>
+        <span id="defaulttemp">Clouds 🌥 33</span> ℃ | ℉ </h3> 
+        
+        
       </div>
       <div class="col-6">
         <ul>
@@ -41,7 +44,7 @@
           </li>
           <li>
             Humidity: 75%
-          </li>
+          </li> 
           <li>
             Wind: 2km/h 
           </li>
@@ -74,9 +77,11 @@
   
   
 </div>
-<small class="source">
-    <a href="https://github.com/phuongdang15694/SheCodes" targer="_blank" >Open-source code</a> by Phuong Dang
-  </small>
+<div class="source">
+<small >
+   <a href="https://github.com/phuongdang15694/SheCodes" targer="_blank" >Open-source code</a> by Phuong Dang
+</small>
+</div>
 <script>
      let now=new Date();
      let p1=document.querySelector("p1");
@@ -99,7 +104,7 @@ function searchCity(city) {
 }
 function showTemperature(response){
   document.querySelector("#currentcity").innerHTML = response.data.name;
-  let temperatureElement=document.querySelector("p2");
+  let temperatureElement=document.querySelector("#defaulttemp");
   temperatureElement.innerHTML=Math.round(response.data.main.temp);
 }
 function submitcity(event){
