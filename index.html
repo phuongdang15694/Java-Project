@@ -1,36 +1,10 @@
 <!DOCTYPE html>
 <html>
-  <style>
-    p2{font-size: xx-large;}
-    p3{font-size: xx-large;}
-  .box{width: 800px;
-    margin: 10px auto;
-  text-align: center;
-  display: block;
-  }
-.container {
-  border: solid 4px;
-  border-color: rgba(2, 244, 244, 0.479);
-  background-color: rgba(129, 217, 231, 0.158);
-  border-radius: 25px;
-  margin: 50px;
-  max-width: fit-content;
-  padding: 25px 25px 25px 25px;
-}
-#searching{
-  border-color: rgb(241, 190, 175);
-  box-shadow: 2px 2px 2px rgba(255, 254, 254, 0.568);
-  font-family: "Quicksand", sans-serif;
-  font-size: 18px;
-  margin-top: 10px;
-  text-align: center;
-}
-
-  </style>
+ 
   <head>
-    <title>Parcel Sandbox</title>
+    <title>Phuong's Weather cast</title>
     <meta charset="UTF-8" />
-    <link href="src/styles.css" />
+    <link rel="stylesheet" href="style.css">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -39,6 +13,7 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
   </head>
 
   <body>
@@ -47,7 +22,6 @@
       <input type="text" placeholder="Enter your city here" id="city-input"/>
       <input type="submit" value="search"  />
     </form>
-  
     <button id="currentbutton">Current Location</button>
     <h2 id="currentcity">
       Ho Chi Minh City
@@ -56,12 +30,25 @@
       Sunday 20:00 
     </p1>
   </br>
-    <p2>
-        Clouds 🌥 33
-        </p2>
-      <p3>
-        ℃
-          </p3>
+    <div class="row">
+      <div class = "col-6">
+        Clouds 🌥 33 ℃|℉
+      </div>
+      <div class="col-6">
+        <ul>
+          <li>
+            Precipitation: 0%
+          </li>
+          <li>
+            Humidity: 75%
+          </li>
+          <li>
+            Wind: 2km/h 
+          </li>
+        </ul>
+      </div>
+    </div>
+  
   </br>
 </br>
 <div class="box secondBox">
@@ -84,8 +71,12 @@
       <div class="col-1">31℃</div>
   </div>
   </div>
-  Coded by Phuong Dang
+  
+  
 </div>
+<small class="source">
+    <a href="https://github.com/phuongdang15694/SheCodes" targer="_blank" >Open-source code</a> by Phuong Dang
+  </small>
 <script>
      let now=new Date();
      let p1=document.querySelector("p1");
