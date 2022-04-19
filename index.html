@@ -8,11 +8,27 @@
   text-align: center;
   display: block;
   }
-
+.container {
+  border: solid 4px;
+  border-color: rgba(2, 244, 244, 0.479);
+  background-color: rgba(129, 217, 231, 0.158);
+  border-radius: 25px;
+  margin: 50px;
+  max-width: fit-content;
+  padding: 25px 25px 25px 25px;
+}
+#searching{
+  border-color: rgb(241, 190, 175);
+  box-shadow: 2px 2px 2px rgba(255, 254, 254, 0.568);
+  font-family: "Quicksand", sans-serif;
+  font-size: 18px;
+  margin-top: 10px;
+  text-align: center;
+}
 
   </style>
   <head>
-    <title>Simple Weather Cast</title>
+    <title>Parcel Sandbox</title>
     <meta charset="UTF-8" />
     <link href="src/styles.css" />
     <link
@@ -26,12 +42,12 @@
   </head>
 
   <body>
-    <h1>
-      <form id="searching">
-        <input type="text" placeholder="Enter your city here" id="city-input"/>
-        <input type="submit" value="search"  />
-      </form>
-    </h1>
+  <div class="container">
+    <form id="searching">
+      <input type="text" placeholder="Enter your city here" id="city-input"/>
+      <input type="submit" value="search"  />
+    </form>
+  
     <button id="currentbutton">Current Location</button>
     <h2 id="currentcity">
       Ho Chi Minh City
@@ -50,13 +66,13 @@
 </br>
 <div class="box secondBox">
   <div class="row">
-      <button class="col-1">Mon</button>
-      <button class="col-1">Tue</button>
-      <button class="col-1">Wed</button>
-      <button class="col-1">Thu</buttonv>
-      <button class="col-1">Fri</button>
-      <button class="col-1">Sat</button>
-      <button class="col-1">Sun</button>
+      <div class="col-1">Mon</div>
+      <div class="col-1">Tue</div>
+      <div class="col-1">Wed</div>
+      <div class="col-1">Thu</div>
+      <div class="col-1">Fri</div>
+      <div class="col-1">Sat</div>
+      <div class="col-1">Sun</div>
   </div>
   <div class="row">
       <div class="col-1">35℃</div>
@@ -68,7 +84,9 @@
       <div class="col-1">31℃</div>
   </div>
   </div>
-      <script>
+  Coded by Phuong Dang
+</div>
+<script>
      let now=new Date();
      let p1=document.querySelector("p1");
      let date=now.getDate();
@@ -78,7 +96,7 @@
      let months=["January","February","March","April","May","June","July","August","September","October","November","December"]
      let day=days[now.getDay()];
      let month=months[now.getMonth()];
-     p1.innerHTML=day+", "+date+" "+month+", "+ hours+":"+minute;
+     p1.innerHTML="Last update: "+day+", "+date+" "+month+", "+ hours+":"+minute;
 
 //week5
 
