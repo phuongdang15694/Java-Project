@@ -49,13 +49,13 @@
       <div class="col-6">
         <ul>
           <li>
-            Precipitation: 0%
+            Pressure: <span id="Precipitation">0</span>
           </li>
           <li>
-            Humidity: 75%
+            Humidity: <span id="Humidity">75</span>%
           </li> 
           <li>
-            Wind: 2km/h 
+            Wind: <span id="Wind">2</span>km/h
           </li>
         </ul>
       </div>
@@ -111,11 +111,18 @@ function searchCity(city) {
 
 function showTemperature(response){
   console.log(response.data);
+
   document.querySelector("#currentcity").innerHTML = response.data.name;
   let temperatureElement=document.querySelector("#defaulttemp");
   temperatureElement.innerHTML=Math.round(response.data.main.temp);
   let descriptionElement=document.querySelector("#description");
   descriptionElement.innerHTML=response.data.weather[0].description;
+  let PrecipitationElement=document.querySelector("#Precipitation");
+  PrecipitationElement.innerHTML=response.data.main.pressure;
+  let HumidityElement=document.querySelector("#Humidity");
+  HumidityElement.innerHTML=response.data.main.humidity;
+  let WindElement=document.querySelector("#Wind");
+  WindElement.innerHTML=response.data.wind.speed;
 }
 
 function submitcity(event){
