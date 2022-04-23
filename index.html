@@ -27,7 +27,8 @@
     <h2 id="currentcity">
       Ho Chi Minh City
     </h2>
-    <ul>
+
+    <ul class="brief">
       <li id="Place">
         Sunday 20:00 
       </li>
@@ -38,12 +39,19 @@
     <div class="row">
       <div class = "col-6">
         <span id="templine">
-         (☞ﾟヮﾟ)☞<span id="defaulttemp"> 33
-            </span><small id="weather-unit">
-              <a href="https://www.shecodes.io/learn/workshops" id="celsius">℃</a> 
-              | 
-              <a href="https://www.shecodes.io/learn/workshops" id="farenheit">℉</a>
-            </small> ☜( ﾟヮﾟ☜)
+         <img 
+           src="http://openweathermap.org/img/wn/10d@2x.png"
+           alt="Clear"
+           id="icon"
+         >
+         <span id="defaulttemp"> 
+          33
+         </span>
+          <small id="weather-unit">
+            <a href="https://www.shecodes.io/learn/workshops" id="celsius">℃</a> 
+            | 
+            <a href="https://www.shecodes.io/learn/workshops" id="farenheit">℉</a>
+          </small> ( ￣o￣) . z Z
         </span> 
       </div>
       <div class="col-6">
@@ -60,8 +68,6 @@
         </ul>
       </div>
     </div>
-  
-  </br>
 </br>
 <div class="box secondBox">
   <div class="row">
@@ -123,6 +129,8 @@ function showTemperature(response){
   HumidityElement.innerHTML=response.data.main.humidity;
   let WindElement=document.querySelector("#Wind");
   WindElement.innerHTML=response.data.wind.speed;
+  let iconELement=document.querySelector("#icon");
+  iconELement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
 }
 
 function submitcity(event){

@@ -32,6 +32,9 @@ h2 {
   display: block;
   margin: 10px auto;
 }
+.brief {
+  margin-bottom: 0px;
+}
 li {
   list-style: none;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -40,16 +43,13 @@ li {
   padding: 0;
   text-transform: capitalize;
 }
-ul {
-  margin: 0;
-  padding: 0;
-}
+
 #templine {
-  padding-left: 25px;
-  padding-top: 5px;
+  padding-left: 15px;
 }
 #defaulttemp {
   font-size: 40px;
+  padding-top: 10px;
 }
 #weather-unit {
   position: relative;
