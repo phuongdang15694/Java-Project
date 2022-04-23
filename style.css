@@ -1,23 +1,24 @@
-p2 {
-  font-size: xx-large;
+h2 {
+  padding-left: 30px;
 }
-p3 {
-  font-size: xx-large;
-}
+
 .box {
   width: 900px;
   margin: 10px auto;
   display: block;
+}
+.whole {
+  margin: 20px auto;
+  max-width: 700px;
+  padding: 10px;
 }
 .container {
   border: solid 4px;
   border-color: rgba(2, 244, 244, 0.479);
   background-color: rgba(129, 217, 231, 0.158);
   border-radius: 25px;
-  margin: 50px 20px 10px 20px;
-  max-width: 600px;
-  padding: 25px 25px 25px 25px;
 }
+
 #searching {
   font-family: "Quicksand", sans-serif;
   font-size: 18px;
@@ -26,4 +27,32 @@ p3 {
 }
 .source {
   margin: 0 auto 0 50px;
+}
+#currentbutton {
+  display: block;
+  margin: 10px auto;
+}
+li {
+  list-style: none;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 17px;
+  margin: 0;
+  padding: 0;
+  text-transform: capitalize;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+#templine {
+  padding-left: 25px;
+  padding-top: 5px;
+}
+#defaulttemp {
+  font-size: 40px;
+}
+#weather-unit {
+  position: relative;
+  font-size: 15px;
+  top: -17px;
 }

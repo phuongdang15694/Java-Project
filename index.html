@@ -17,6 +17,7 @@
   </head>
 
   <body>
+  <div class="whole">
   <div class="container">
     <form id="searching">
       <input type="text" placeholder="Enter your city here" id="city-input"/>
@@ -26,16 +27,24 @@
     <h2 id="currentcity">
       Ho Chi Minh City
     </h2>
-    <p1>
-      Sunday 20:00 
-    </p1>
-  </br>
+    <ul>
+      <li id="Place">
+        Sunday 20:00 
+      </li>
+      <li id="description">
+        <small>Clear Sky</small>
+      </li>
+    </ul>
     <div class="row">
       <div class = "col-6">
-        <h3>
-        <span id="defaulttemp">Clouds 🌥 33</span> ℃ | ℉ </h3> 
-        
-        
+        <span id="templine">
+         (☞ﾟヮﾟ)☞<span id="defaulttemp"> 33
+            </span><small id="weather-unit">
+              <a href="https://www.shecodes.io/learn/workshops" id="celsius">℃</a> 
+              | 
+              <a href="https://www.shecodes.io/learn/workshops" id="farenheit">℉</a>
+            </small> ☜(ﾟヮﾟ☜)
+        </span> 
       </div>
       <div class="col-6">
         <ul>
@@ -73,18 +82,15 @@
       <div class="col-1">30℃</div>
       <div class="col-1">31℃</div>
   </div>
-  </div>
-  
-  
+</div> 
 </div>
-<div class="source">
 <small >
    <a href="https://github.com/phuongdang15694/SheCodes" targer="_blank" >Open-source code</a> by Phuong Dang
 </small>
 </div>
 <script>
      let now=new Date();
-     let p1=document.querySelector("p1");
+     let p1=document.querySelector("#Place");
      let date=now.getDate();
      let hours=now.getHours();
      let minute=now.getMinutes();
@@ -102,18 +108,24 @@ function searchCity(city) {
   let apiUrl =`${apiEndpoint}?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemperature);
 }
+
 function showTemperature(response){
+  console.log(response.data);
   document.querySelector("#currentcity").innerHTML = response.data.name;
   let temperatureElement=document.querySelector("#defaulttemp");
   temperatureElement.innerHTML=Math.round(response.data.main.temp);
+  let descriptionElement=document.querySelector("#description");
+  descriptionElement.innerHTML=response.data.weather[0].description;
 }
+
 function submitcity(event){
   event.preventDefault();
   let city = document.querySelector("#city-input").value;
   searchCity(city);     
 } 
-   let form=document.querySelector("#searching")
-    form.addEventListener("click",submitcity)
+  let form=document.querySelector("#searching")
+  form.addEventListener("click",submitcity)
+
 
 function getLocation(position) {
   let apiKey = "017b675a2211b158bb6a64666e9c48b3";
