@@ -45,7 +45,7 @@ li {
 }
 
 #templine {
-  padding-left: 15px;
+  padding-left: 5px;
 }
 #defaulttemp {
   font-size: 40px;
@@ -55,4 +55,10 @@ li {
   position: relative;
   font-size: 15px;
   top: -17px;
+}
+#tempe {
+  padding-right: 0px;
+}
+#icon {
+  padding-bottom: 25px;
 }
