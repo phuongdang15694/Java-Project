@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
- 
   <head>
     <title>Phuong's Weather cast</title>
     <meta charset="UTF-8" />
-    
-    <link rel="stylesheet" href="style.css">
-    
+
+    <link rel="stylesheet" href="style.css" />
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -15,170 +14,278 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    
   </head>
 
   <body>
-  <div class="whole">
-  <div class="container">
-    <form id="searching">
-      <input type="text" placeholder="Enter your city here" id="city-input"/>
-      <input type="submit" value="search"  />
-    </form>
-    <button id="currentbutton">Current Location</button>
-    <h2 id="currentcity">
-      Ho Chi Minh City
-    </h2>
+    <div class="whole">
+      <div class="container">
+        <form id="searching">
+          <input
+            type="text"
+            placeholder="Enter your city here"
+            id="city-input"
+          />
+          <input type="submit" value="search" />
+        </form>
+        <button id="currentbutton">Current Location</button>
+        <h2 id="currentcity">Ho Chi Minh City</h2>
 
-    <ul class="brief">
-      <li id="Place">
-        Sunday 20:00 
-      </li>
-      <li id="description">
-        <small>Clear Sky</small>
-      </li>
-    </ul>
-    <div class="row">
-      <div class = "col-6" id="tempe">
-        <div id="templine" class="weather-temperature">
-         <small>
-          <img 
-           src="http://openweathermap.org/img/wn/10d@2x.png"
-           alt="Clear"
-           id="icon"
-          >
-         </small>
-         <span id="defaulttemp"> 
-          33
-         </span>
-          <small id="weather-unit">
-            <a href="https://www.shecodes.io/learn/workshops" id="celsius" class="active">℃</a> 
-            | 
-            <a href="https://www.shecodes.io/learn/workshops" id="farenheit">℉</a>
-          </small> ( ￣o￣) . z Z
-        </div> 
-      </div>
-      <div class="col-6">
-        <ul>
-          <li>
-            Pressure: <span id="Precipitation">0</span>
-          </li>
-          <li>
-            Humidity: <span id="Humidity">75</span>%
-          </li> 
-          <li>
-            Wind: <span id="Wind">2</span>km/h
+        <ul class="brief">
+          <li id="Place">Sunday 20:00</li>
+          <li id="description">
+            <small>Clear Sky</small>
           </li>
         </ul>
+        <div class="row" id="tempe">
+          <div class="col-6">
+            <div id="templine" class="weather-temperature">
+              <small>
+                <img
+                  src="http://openweathermap.org/img/wn/10d@2x.png"
+                  alt="Clear"
+                  id="icon"
+                />
+              </small>
+              <span id="defaulttemp"> 33</span>
+              <small id="weather-unit">
+                <a
+                  href="https://www.shecodes.io/learn/workshops"
+                  id="celsius"
+                  class="active"
+                  >℃</a
+                >
+                |
+                <a href="https://www.shecodes.io/learn/workshops" id="farenheit"
+                  >℉
+                </a>
+              </small>
+              ( ￣o￣) . z Z
+            </div>
+          </div>
+          <div class="col-6">
+            <ul>
+              <li>Pressure: <span id="Precipitation">0</span></li>
+              <li>Humidity: <span id="Humidity">75</span>%</li>
+              <li>Wind: <span id="Wind">2</span>km/h</li>
+            </ul>
+          </div>
+        </div>
+        <div class="weather-forecast">
+          <div class="row">
+            <div class="col-2" id="weather-forecast-all">
+              <div class="weather-forecast">Mon</div>
+              <img
+                src="http://openweathermap.org/img/wn/10d@2x.png"
+                alt=""
+                width="60"
+              />
+              <div class="weather-forecast-temperature">
+                <span class="weather-forecast-temperature-maximum"> 35° </span>
+                -
+                <span class="weather-forecast-temperature-minimum"> 30° </span>
+              </div>
+            </div>
+            <div class="col-2" id="weather-forecast-all">
+              <div class="weather-forecast">Tue</div>
+              <img
+                src="http://openweathermap.org/img/wn/10d@2x.png"
+                alt=""
+                width="60"
+              />
+              <div class="weather-forecast-temperature">
+                <span class="weather-forecast-temperature-maximum"> 35° </span>
+                -
+                <span class="weather-forecast-temperature-minimum"> 30° </span>
+              </div>
+            </div>
+            <div class="col-2" id="weather-forecast-all">
+              <div class="weather-forecast">Wed</div>
+              <img
+                src="http://openweathermap.org/img/wn/10d@2x.png"
+                alt=""
+                width="60"
+              />
+              <div class="weather-forecast-temperature">
+                <span class="weather-forecast-temperature-maximum"> 35° </span>
+                -
+                <span class="weather-forecast-temperature-minimum"> 30° </span>
+              </div>
+            </div>
+            <div class="col-2" id="weather-forecast-all">
+              <div class="weather-forecast">Thu</div>
+              <img
+                src="http://openweathermap.org/img/wn/10d@2x.png"
+                alt=""
+                width="60"
+              />
+              <div class="weather-forecast-temperature">
+                <span class="weather-forecast-temperature-maximum"> 35° </span>
+                -
+                <span class="weather-forecast-temperature-minimum"> 30° </span>
+              </div>
+            </div>
+            <div class="col-2" id="weather-forecast-all">
+              <div class="weather-forecast">Fri</div>
+              <img
+                src="http://openweathermap.org/img/wn/10d@2x.png"
+                alt=""
+                width="60"
+              />
+              <div class="weather-forecast-temperature">
+                <span class="weather-forecast-temperature-maximum"> 35° </span>
+                -
+                <span class="weather-forecast-temperature-minimum"> 30° </span>
+              </div>
+            </div>
+            <div class="col-2" id="weather-forecast-all">
+              <div class="weather-forecast">Sat</div>
+              <img
+                src="http://openweathermap.org/img/wn/10d@2x.png"
+                alt=""
+                width="60"
+              />
+              <div class="weather-forecast-temperature">
+                <span class="weather-forecast-temperature-maximum"> 35° </span>
+                -
+                <span class="weather-forecast-temperature-minimum"> 30° </span>
+              </div>
+            </div>
+            <div class="col-2" id="weather-forecast-all">
+              <div class="weather-forecast">Sun</div>
+              <img
+                src="http://openweathermap.org/img/wn/10d@2x.png"
+                alt=""
+                width="60"
+              />
+              <div class="weather-forecast-temperature">
+                <span class="weather-forecast-temperature-maximum"> 35° </span>
+                -
+                <span class="weather-forecast-temperature-minimum"> 30° </span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+      <small>
+        <a href="https://github.com/phuongdang15694/SheCodes" targer="_blank"
+          >Open-source code</a
+        >
+        by Phuong Dang
+      </small>
     </div>
-</br>
-<div class="box secondBox">
-  <div class="row">
-      <div class="col-1">Mon</div>
-      <div class="col-1">Tue</div>
-      <div class="col-1">Wed</div>
-      <div class="col-1">Thu</div>
-      <div class="col-1">Fri</div>
-      <div class="col-1">Sat</div>
-      <div class="col-1">Sun</div>
-  </div>
-  <div class="row">
-      <div class="col-1">35℃</div>
-      <div class="col-1">33℃</div>
-      <div class="col-1">32℃</div>
-      <div class="col-1">33℃</div>
-      <div class="col-1">31℃</div>
-      <div class="col-1">30℃</div>
-      <div class="col-1">31℃</div>
-  </div>
-</div> 
-</div>
-<small >
-   <a href="https://github.com/phuongdang15694/SheCodes" targer="_blank" >Open-source code</a> by Phuong Dang
-</small>
-</div>
-<script>
-     let now=new Date();
-     let p1=document.querySelector("#Place");
-     let date=now.getDate();
-     let hours=now.getHours();
-     let minute=now.getMinutes();
-    let days=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-     let months=["January","February","March","April","May","June","July","August","September","October","November","December"]
-     let day=days[now.getDay()];
-     let month=months[now.getMonth()];
-     p1.innerHTML="Last update: "+day+", "+date+" "+month+", "+ hours+":"+minute;
+    <script>
+      let now = new Date();
+      let p1 = document.querySelector("#Place");
+      let date = now.getDate();
+      let hours = now.getHours();
+      let minute = now.getMinutes();
+      let days = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ];
+      let months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+      let day = days[now.getDay()];
+      let month = months[now.getMonth()];
+      p1.innerHTML =
+        "Last update: " +
+        day +
+        ", " +
+        date +
+        " " +
+        month +
+        ", " +
+        hours +
+        ":" +
+        minute;
 
-//week5
+      //week5
 
-function searchCity(city) {
-  let apiKey = "017b675a2211b158bb6a64666e9c48b3";
-  let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
-  let apiUrl =`${apiEndpoint}?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(showTemperature);
-}
+      function searchCity(city) {
+        let apiKey = "017b675a2211b158bb6a64666e9c48b3";
+        let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
+        let apiUrl = `${apiEndpoint}?q=${city}&appid=${apiKey}&units=metric`;
+        axios.get(apiUrl).then(showTemperature);
+      }
 
-function showTemperature(response){
-  console.log(response.data);
-  document.querySelector("#currentcity").innerHTML = response.data.name;
-  let temperatureElement=document.querySelector("#defaulttemp");
-  temperatureElement.innerHTML=Math.round(response.data.main.temp);
-  let descriptionElement=document.querySelector("#description");
-  descriptionElement.innerHTML=response.data.weather[0].description;
-  let PrecipitationElement=document.querySelector("#Precipitation");
-  PrecipitationElement.innerHTML=response.data.main.pressure;
-  let HumidityElement=document.querySelector("#Humidity");
-  HumidityElement.innerHTML=response.data.main.humidity;
-  let WindElement=document.querySelector("#Wind");
-  WindElement.innerHTML=response.data.wind.speed;
-  let iconELement=document.querySelector("#icon");
-  iconELement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
-  celsiusTemperature = response.data.main.temp;
-}
+      function showTemperature(response) {
+        console.log(response.data);
+        document.querySelector("#currentcity").innerHTML = response.data.name;
+        let temperatureElement = document.querySelector("#defaulttemp");
+        temperatureElement.innerHTML = Math.round(response.data.main.temp);
+        let descriptionElement = document.querySelector("#description");
+        descriptionElement.innerHTML = response.data.weather[0].description;
+        let PrecipitationElement = document.querySelector("#Precipitation");
+        PrecipitationElement.innerHTML = response.data.main.pressure;
+        let HumidityElement = document.querySelector("#Humidity");
+        HumidityElement.innerHTML = response.data.main.humidity;
+        let WindElement = document.querySelector("#Wind");
+        WindElement.innerHTML = response.data.wind.speed;
+        let iconELement = document.querySelector("#icon");
+        iconELement.setAttribute(
+          "src",
+          `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+        );
+        celsiusTemperature = response.data.main.temp;
+      }
 
-function submitcity(event){
-  event.preventDefault();
-  let city = document.querySelector("#city-input").value;
-  searchCity(city); 
-} 
-  let form=document.querySelector("#searching")
-  form.addEventListener("click",submitcity)
+      function submitcity(event) {
+        event.preventDefault();
+        let city = document.querySelector("#city-input").value;
+        searchCity(city);
+      }
+      let form = document.querySelector("#searching");
+      form.addEventListener("click", submitcity);
 
-function getLocation(position) {
-  let apiKey = "017b675a2211b158bb6a64666e9c48b3";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(showTemperature);
-}
-function CurrentLocation(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(getLocation);
-}
-let currentLocationButton = document.querySelector("#currentbutton");
-currentLocationButton.addEventListener("click", CurrentLocation)
+      function getLocation(position) {
+        let apiKey = "017b675a2211b158bb6a64666e9c48b3";
+        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+        axios.get(apiUrl).then(showTemperature);
+      }
+      function CurrentLocation(event) {
+        event.preventDefault();
+        navigator.geolocation.getCurrentPosition(getLocation);
+      }
+      let currentLocationButton = document.querySelector("#currentbutton");
+      currentLocationButton.addEventListener("click", CurrentLocation);
 
-function changetoF(event){
-  event.preventDefault();
-  let farenheitTemperature=Math.round((celsiusTemperature*9)/5+32);
-  let temperatureforunitpart=document.querySelector("#defaulttemp");
-  temperatureforunitpart.innerHTML=farenheitTemperature
-}
-let toF=document.querySelector("#farenheit");
-toF.addEventListener("click",changetoF);
+      function changetoF(event) {
+        event.preventDefault();
+        let farenheitTemperature = Math.round(
+          (celsiusTemperature * 9) / 5 + 32
+        );
+        let temperatureforunitpart = document.querySelector("#defaulttemp");
+        temperatureforunitpart.innerHTML = farenheitTemperature;
+      }
+      let toF = document.querySelector("#farenheit");
+      toF.addEventListener("click", changetoF);
 
+      function changetoC(event) {
+        event.preventDefault();
+        let temperatureforunitpart = document.querySelector("#defaulttemp");
+        temperatureforunitpart.innerHTML = Math.round(celsiusTemperature);
+      }
+      let toC = document.querySelector("#celsius");
+      toC.addEventListener("click", changetoC);
 
-function changetoC(event){
-  event.preventDefault();
-  let temperatureforunitpart=document.querySelector("#defaulttemp");
-  temperatureforunitpart.innerHTML=Math.round(celsiusTemperature);
-}
-let toC=document.querySelector("#celsius");
-toC.addEventListener("click",changetoC)
-
-let celsiusTemperature=null;
-
-
-</script>
-
+      let celsiusTemperature = null;
+    </script>
   </body>
 </html>

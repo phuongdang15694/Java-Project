@@ -48,16 +48,18 @@ li {
   padding-left: 5px;
 }
 #defaulttemp {
-  font-size: 40px;
-  padding-top: 10px;
+  font-size: 50px;
+  width: 50px;
 }
 #weather-unit {
   position: relative;
   font-size: 15px;
-  top: -17px;
+  top: -22px;
 }
 #tempe {
   padding-right: 0px;
+  height: 110px;
+  text-align: center;
 }
 #icon {
   padding-bottom: 25px;
@@ -74,4 +76,14 @@ li {
 }
 #farenheit {
   text-decoration: none;
+}
+.weather-forecast {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.weather-forecast-temperature {
+  font-size: 12px;
+}
+#weather-forecast-all {
+  padding: 0px;
 }
