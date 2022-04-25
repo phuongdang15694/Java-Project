@@ -62,3 +62,16 @@ li {
 #icon {
   padding-bottom: 25px;
 }
+.active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+.active:hover {
+  text-decoration: none;
+  color: black;
+  cursor: default;
+}
+#farenheit {
+  text-decoration: none;
+}

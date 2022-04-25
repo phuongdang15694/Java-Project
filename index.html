@@ -40,7 +40,7 @@
     </ul>
     <div class="row">
       <div class = "col-6" id="tempe">
-        <span id="templine">
+        <div id="templine" class="weather-temperature">
          <small>
           <img 
            src="http://openweathermap.org/img/wn/10d@2x.png"
@@ -52,11 +52,11 @@
           33
          </span>
           <small id="weather-unit">
-            <a href="https://www.shecodes.io/learn/workshops" id="celsius">℃</a> 
+            <a href="https://www.shecodes.io/learn/workshops" id="celsius" class="active">℃</a> 
             | 
             <a href="https://www.shecodes.io/learn/workshops" id="farenheit">℉</a>
           </small> ( ￣o￣) . z Z
-        </span> 
+        </div> 
       </div>
       <div class="col-6">
         <ul>
@@ -166,14 +166,17 @@ function changetoF(event){
 let toF=document.querySelector("#farenheit");
 toF.addEventListener("click",changetoF);
 
-function toC(event){
+
+function changetoC(event){
   event.preventDefault();
   let temperatureforunitpart=document.querySelector("#defaulttemp");
-  temperatureforunitpart.innerHTML=celsiusTemperature;
+  temperatureforunitpart.innerHTML=Math.round(celsiusTemperature);
 }
-let celsiusTemperature=null;
 let toC=document.querySelector("#celsius");
 toC.addEventListener("click",changetoC)
+
+let celsiusTemperature=null;
+
 
 </script>
 
