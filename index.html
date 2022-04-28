@@ -70,101 +70,7 @@
             </ul>
           </div>
         </div>
-        <div class="weather-forecast">
-          <div class="row">
-            <div class="col-2" id="weather-forecast-all">
-              <div class="weather-forecast">Mon</div>
-              <img
-                src="http://openweathermap.org/img/wn/10d@2x.png"
-                alt=""
-                width="60"
-              />
-              <div class="weather-forecast-temperature">
-                <span class="weather-forecast-temperature-maximum"> 35° </span>
-                -
-                <span class="weather-forecast-temperature-minimum"> 30° </span>
-              </div>
-            </div>
-            <div class="col-2" id="weather-forecast-all">
-              <div class="weather-forecast">Tue</div>
-              <img
-                src="http://openweathermap.org/img/wn/10d@2x.png"
-                alt=""
-                width="60"
-              />
-              <div class="weather-forecast-temperature">
-                <span class="weather-forecast-temperature-maximum"> 35° </span>
-                -
-                <span class="weather-forecast-temperature-minimum"> 30° </span>
-              </div>
-            </div>
-            <div class="col-2" id="weather-forecast-all">
-              <div class="weather-forecast">Wed</div>
-              <img
-                src="http://openweathermap.org/img/wn/10d@2x.png"
-                alt=""
-                width="60"
-              />
-              <div class="weather-forecast-temperature">
-                <span class="weather-forecast-temperature-maximum"> 35° </span>
-                -
-                <span class="weather-forecast-temperature-minimum"> 30° </span>
-              </div>
-            </div>
-            <div class="col-2" id="weather-forecast-all">
-              <div class="weather-forecast">Thu</div>
-              <img
-                src="http://openweathermap.org/img/wn/10d@2x.png"
-                alt=""
-                width="60"
-              />
-              <div class="weather-forecast-temperature">
-                <span class="weather-forecast-temperature-maximum"> 35° </span>
-                -
-                <span class="weather-forecast-temperature-minimum"> 30° </span>
-              </div>
-            </div>
-            <div class="col-2" id="weather-forecast-all">
-              <div class="weather-forecast">Fri</div>
-              <img
-                src="http://openweathermap.org/img/wn/10d@2x.png"
-                alt=""
-                width="60"
-              />
-              <div class="weather-forecast-temperature">
-                <span class="weather-forecast-temperature-maximum"> 35° </span>
-                -
-                <span class="weather-forecast-temperature-minimum"> 30° </span>
-              </div>
-            </div>
-            <div class="col-2" id="weather-forecast-all">
-              <div class="weather-forecast">Sat</div>
-              <img
-                src="http://openweathermap.org/img/wn/10d@2x.png"
-                alt=""
-                width="60"
-              />
-              <div class="weather-forecast-temperature">
-                <span class="weather-forecast-temperature-maximum"> 35° </span>
-                -
-                <span class="weather-forecast-temperature-minimum"> 30° </span>
-              </div>
-            </div>
-            <div class="col-2" id="weather-forecast-all">
-              <div class="weather-forecast">Sun</div>
-              <img
-                src="http://openweathermap.org/img/wn/10d@2x.png"
-                alt=""
-                width="60"
-              />
-              <div class="weather-forecast-temperature">
-                <span class="weather-forecast-temperature-maximum"> 35° </span>
-                -
-                <span class="weather-forecast-temperature-minimum"> 30° </span>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="weather-forecast" id="forecast"></div>
       </div>
       <small>
         <a href="https://github.com/phuongdang15694/SheCodes" targer="_blank"
@@ -215,7 +121,6 @@
         hours +
         ":" +
         minute;
-
       //week5
 
       function searchCity(city) {
@@ -286,6 +191,33 @@
       toC.addEventListener("click", changetoC);
 
       let celsiusTemperature = null;
+      // week 8
+      displayForecast();
+      function displayForecast() {
+        let forecastElement = document.querySelector("#forecast");
+        let forecastHTML = `<div class="row">`;
+        let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+        days.forEach(function (day) {
+          forecastHTML =
+            forecastHTML +
+            `<div class="col-1" id="weather-forecast-all">
+              <div class="weather-forecast">${day}</div>
+              <img
+                src="http://openweathermap.org/img/wn/10d@2x.png"
+                alt=""
+                width="60"
+              />
+              <div class="weather-forecast-temperature">
+                <span class="weather-forecast-temperature-maximum"> 35° </span>
+                -
+                <span class="weather-forecast-temperature-minimum"> 30° </span>
+              </div>
+            </div>`;
+        });
+
+        forecastHTML = forecastHTML + `</div>`;
+        forecastElement.innerHTML = forecastHTML;
+      }
     </script>
   </body>
 </html>
